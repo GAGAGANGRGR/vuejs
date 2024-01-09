@@ -1,0 +1,8 @@
+{
+    "name": "Employe Form",
+    "input":[
+        {"name":"EmpId"},
+        {"name":"Name"},
+        {"name":"Email"}
+    ]
+}

@@ -1,4 +1,19 @@
 <script setup>
+import Form from '../components/FormComponent.vue'
+import formData from '../FormsJSON/Student.json'
+</script>
+
+<template>
+  <Form :formData="formData" />
+</template>
+
+<style>
+</style>
+
+
+
+
+<!-- <script setup>
 import {ref } from 'vue'
 const StuData = ref({
   name: '',
@@ -13,17 +28,13 @@ const submitForm = (event) => {
 
 //   save the data to local storegae
 const existingData = JSON.parse(localStorage.getItem('allStudentData')) || [];
-
-// Add new form data to the array
 existingData.push(StuData.value);
-
-// Save updated data to local storage
 localStorage.setItem('allStudentData', JSON.stringify(existingData));
 };
 
 const showForm = (event) => {
   event.preventDefault();
-  alert(`Entered Data:\nName: ${StuData.value.name}\nEmail: ${StuData.value.email}\nPhone: ${StuData.value.phno}`);
+  alert(`Entered As we discussed in the morning, you should create a common form component.Data:\nName: ${StuData.value.name}\nEmail: ${StuData.value.email}\nPhone: ${StuData.value.phno}`);
 };
 
 </script>
@@ -99,4 +110,4 @@ button {
   
 
 /* Add more styles as needed */
-</style>
+</style> -->

@@ -1,0 +1,8 @@
+{
+    "name": "Student Form",
+    "input":[
+        {"name":"Name"},
+        {"name":"Email"},
+        {"name":"PhNo"}
+    ]
+}

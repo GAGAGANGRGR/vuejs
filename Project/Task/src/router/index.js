@@ -9,7 +9,12 @@ const router = createRouter({
     {
       path: '/studentView',
       name: 'studentView',
-      component: StudentView
+      component: () => import('../views/StudentView.vue'),
+    },
+    {
+      path: '/employeView',
+      name: 'employeView',
+      component: () => import('../views/EmployeView.vue'),
     },
     
   ]
