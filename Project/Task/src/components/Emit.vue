@@ -1,8 +1,11 @@
 <template>
-    <div>
-      <h3>Child Component</h3>
-      <input type="text" v-model="dataToSend" /><br>
-      <button @click="emitData">EmitData</button>
+    <div class="child-container">
+      <div class="child-box">
+        <h3>Child Component</h3>
+        <input type="text" v-model="dataToSend" class="input-field" />
+        <br />
+        <button @click="emitData" class="button">Emit Data</button>
+      </div>
     </div>
   </template>
   
@@ -18,6 +21,37 @@
   };
 
   </script>
+
+<style scoped>
+.child-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.child-box {
+  padding: 20px;
+  border: 2px solid #2ecc71;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.button {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
 
   
 
