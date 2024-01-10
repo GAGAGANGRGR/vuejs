@@ -11,7 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <a>
         <RouterLink to="/studentView">StudentForm</RouterLink><br>
         <RouterLink to="/employeView">EmployeForm</RouterLink>
-        <!-- <RouterLink to="/emit">Emit</RouterLink> -->
+        <RouterLink to="/emit">Emit</RouterLink>
       </a>
       </nav>
     </div>

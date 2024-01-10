@@ -10,7 +10,7 @@ console.log(props.formData);
 const formData = props.formData;
 console.log(formData);
 
-//----------------------------------------Createing dynamic refs for input values--------------------------------
+//----------------------------------------Day3-Createing dynamic refs for input values--------------------------------
 const inputValues = {};
 formData.input.forEach(input => {
     inputValues[input.name] = ref(''); // Initialize each input value with a reactive reference
@@ -23,7 +23,7 @@ storedData.value = JSON.parse(localStorage.getItem(formData.name)) || [];
 const flag = ref(false);
 const flag1 = ref(false);
 
-//---------------------------------------------------------------------------------------------------------------
+//--------------------------------------------Day3-------------------------------------------------------------------
 
 
 const handleSubmit = () => {
@@ -37,15 +37,15 @@ const handleSubmit = () => {
 
     // Retrieve existing data from local storage or use an empty array
     //  all the entred data is stored in the storedata(its in array)
-    storedData.value = JSON.parse(localStorage.getItem(formData.name)) || [];
+    // storedData.value = JSON.parse(localStorage.getItem(formData.name)) || [];
     localStorage.setItem('submittedData', JSON.stringify(submittedData));
     storedData.value.push(submittedData);
     localStorage.setItem(formData.name, JSON.stringify(storedData.value));
     console.log(submittedData);
-};
+}; 
 
 
-//---------------------------------To Showing All the Data-----------------------------------------------------------------
+//---------------------------------Day4-To Showing All the Data-----------------------------------------------------------------
 
 const showAlldata = () => {
     console.log('All Stored Data:', storedData.value);
@@ -53,7 +53,7 @@ const showAlldata = () => {
 };
 
 
-//---------------------------------To Show the Names-----------------------------------------------------------------
+//---------------------------------Day4-To Show the Names-----------------------------------------------------------------
 
 const showNames = () => {
      console.log('storedata',storedData.value);
@@ -92,7 +92,7 @@ const getFormInputNames = () => {
         <button @click="showAlldata">Show All Data</button>
     </div>
 
-     <!-- -------------------------------------------Displaying All Data stored in the Local Storage --------------------------------------->
+     <!-- -------------------------------------------Day4-Displaying All Data stored in the Local Storage --------------------------------------->
      <div v-if="flag1">
         <h1 style="padding-right: 85%;">Stored Data:</h1>
         <ul>
@@ -104,7 +104,7 @@ const getFormInputNames = () => {
         </ul>   
     </div>
 
-    <!--------------------------------------------------------To Show the Names----------------------------------------------------- -->
+    <!--------------------------------------------------------Day4-To Show the Names----------------------------------------------------- -->
     <div v-if="flag">
         <h1 style="padding-right: 85%;">Student Names</h1>
         <div v-for="(name, index) in getFormInputNames()" :key="index" class="nameItem">

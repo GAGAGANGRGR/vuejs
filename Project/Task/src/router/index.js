@@ -1,6 +1,4 @@
 import {  createRouter, createWebHistory } from 'vue-router'
-import StudentView from '../views/StudentView.vue'
-
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,11 +14,11 @@ const router = createRouter({
       name: 'employeView',
       component: () => import('../views/EmployeView.vue'),
     },
-    // {
-    //   path: '/emit',
-    //   name: 'emit',
-    //   component: () => import('../components/A.vue'),
-    // },
+    {
+      path: '/emit',
+      name: 'emit',
+      component: () => import('../views/EmitView.vue'),
+    },
   ]
 })
 

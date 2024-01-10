@@ -2,6 +2,7 @@
 import Form from '../components/FormComponent.vue'
 import formData from '../FormsJSON/Student.json'
 console.log(formData)
+
 </script>
 
 <template>
