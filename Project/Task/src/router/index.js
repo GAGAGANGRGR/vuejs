@@ -16,7 +16,11 @@ const router = createRouter({
       name: 'employeView',
       component: () => import('../views/EmployeView.vue'),
     },
-    
+    // {
+    //   path: '/emit',
+    //   name: 'emit',
+    //   component: () => import('../components/A.vue'),
+    // },
   ]
 })
 

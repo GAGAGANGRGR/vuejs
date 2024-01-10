@@ -2,7 +2,7 @@
 import { defineProps, ref } from 'vue';
 
 // Define the props passed to the component
-const props = defineProps(['formData']);
+const props =   defineProps(['formData']);
 
 console.log(props.formData);
 
@@ -18,7 +18,8 @@ formData.input.forEach(input => {
 console.log(inputValues)
 
 //variables used in templet tag 
-let storedData = JSON.parse(localStorage.getItem(formData.name)) || [];
+let storedData=ref([]);
+storedData.value = JSON.parse(localStorage.getItem(formData.name)) || [];
 const flag = ref(false);
 const flag1 = ref(false);
 
@@ -36,10 +37,10 @@ const handleSubmit = () => {
 
     // Retrieve existing data from local storage or use an empty array
     //  all the entred data is stored in the storedata(its in array)
-    storedData = JSON.parse(localStorage.getItem(formData.name)) || [];
+    storedData.value = JSON.parse(localStorage.getItem(formData.name)) || [];
     localStorage.setItem('submittedData', JSON.stringify(submittedData));
-    storedData.push(submittedData);
-    localStorage.setItem(formData.name, JSON.stringify(storedData));
+    storedData.value.push(submittedData);
+    localStorage.setItem(formData.name, JSON.stringify(storedData.value));
     console.log(submittedData);
 };
 
@@ -47,7 +48,7 @@ const handleSubmit = () => {
 //---------------------------------To Showing All the Data-----------------------------------------------------------------
 
 const showAlldata = () => {
-    console.log('All Stored Data:', storedData);
+    console.log('All Stored Data:', storedData.value);
     flag1.value = true;
 };
 
@@ -55,14 +56,14 @@ const showAlldata = () => {
 //---------------------------------To Show the Names-----------------------------------------------------------------
 
 const showNames = () => {
-     console.log('storedata',storedData);
-    console.log('Stored Form Input Names:', getFormInputNames());
+     console.log('storedata',storedData.value);
+    console.log('show only names:', getFormInputNames());
     flag.value = true;
 };
 //getFormInputNames STORES THE ONLY THE NAME IN ARRAY FORMATE
 const getFormInputNames = () => {
     // return formData.input.map(input => input.name);
-    return storedData.map(data => data?.Name || '');
+    return storedData.value.map(data => data?.Name || '');
 };
 
 //--------------------------------------------------------------------------------------------------------------------------

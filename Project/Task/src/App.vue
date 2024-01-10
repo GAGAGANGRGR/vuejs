@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <a>
         <RouterLink to="/studentView">StudentForm</RouterLink><br>
         <RouterLink to="/employeView">EmployeForm</RouterLink>
+        <!-- <RouterLink to="/emit">Emit</RouterLink> -->
       </a>
       </nav>
     </div>
