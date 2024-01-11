@@ -1,9 +1,15 @@
 import {  createRouter, createWebHistory } from 'vue-router'
+import HomeView from "../views/Home.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: 
   [
+    {
+      path: '/home',
+      name: 'student',
+      component: HomeView
+    },
     {
       path: '/studentView',
       name: 'studentView',
@@ -18,6 +24,16 @@ const router = createRouter({
       path: '/emit',
       name: 'emit',
       component: () => import('../views/EmitView.vue'),
+    },
+    {
+      path: '/alldata',
+      name: 'allData',
+      component: () => import('../views/AllData.vue'),
+    },
+    {
+      path: '/alldata/user:id',
+      name: 'allDataUser',
+      component: () => import('../views/allDataUser.vue'),
     },
   ]
 })

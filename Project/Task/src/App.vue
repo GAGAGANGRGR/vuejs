@@ -1,4 +1,14 @@
-<script setup lang="ts">
+
+
+<script>
+import { ref, computed } from 'vue';
+const a=ref('gagan')
+
+</script>
+
+
+
+<script setup >
 import { RouterLink, RouterView } from 'vue-router'
 
 </script>
@@ -37,4 +47,4 @@ a {
   display: flex;
 }
 
-</style>
+</style> 

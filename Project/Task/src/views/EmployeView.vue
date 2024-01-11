@@ -5,6 +5,7 @@ import formData from '../FormsJSON/Employe.json'
 
 <template>
   <Form :formData="formData" />
+  <!-- <RouterLink to="/employeView/allData">All Data</RouterLink> -->
 </template>
 
 <style>

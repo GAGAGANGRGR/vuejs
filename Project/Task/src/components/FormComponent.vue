@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 // Define the props passed to the component
 const props =   defineProps(['formData']);
@@ -10,6 +11,7 @@ console.log(props.formData);
 const formData = props.formData;
 console.log(formData);
 
+const router = useRouter()
 //----------------------------------------Day3-Createing dynamic refs for input values--------------------------------
 const inputValues = {};
 formData.input.forEach(input => {
@@ -44,28 +46,6 @@ const handleSubmit = () => {
     console.log(submittedData);
 }; 
 
-
-//---------------------------------Day4-To Showing All the Data-----------------------------------------------------------------
-
-const showAlldata = () => {
-    console.log('All Stored Data:', storedData.value);
-    flag1.value = true;
-};
-
-
-//---------------------------------Day4-To Show the Names-----------------------------------------------------------------
-
-const showNames = () => {
-     console.log('storedata',storedData.value);
-    console.log('show only names:', getFormInputNames());
-    flag.value = true;
-};
-//getFormInputNames STORES THE ONLY THE NAME IN ARRAY FORMATE
-const getFormInputNames = () => {
-    // return formData.input.map(input => input.name);
-    return storedData.value.map(data => data?.Name || '');
-};
-
 //--------------------------------------------------------------------------------------------------------------------------
 </script>
 
@@ -88,30 +68,10 @@ const getFormInputNames = () => {
 
             </div>
         </form>
-        <button @click="showNames">ShowAllNames</button>
-        <button @click="showAlldata">Show All Data</button>
+        <!-- <button @click="showNames">ShowAllNames</button> -->
+        <button @click="router.push(`/alldata`)">Show All Data</button>
     </div>
 
-     <!-- -------------------------------------------Day4-Displaying All Data stored in the Local Storage --------------------------------------->
-     <div v-if="flag1">
-        <h1 style="padding-right: 85%;">Stored Data:</h1>
-        <ul>
-            <div v-for="(data, index) in storedData" :key="index" class="nameItem">
-                <span v-for="(value, key) in data">
-                    {{ key }}: {{ value }}<br>
-                </span>
-            </div>
-        </ul>   
-    </div>
-
-    <!--------------------------------------------------------Day4-To Show the Names----------------------------------------------------- -->
-    <div v-if="flag">
-        <h1 style="padding-right: 85%;">Student Names</h1>
-        <div v-for="(name, index) in getFormInputNames()" :key="index" class="nameItem">
-            {{ index + 1 }}st Name: {{ name }}
-        </div>
-    </div>
-   
 </template>
 
 <!-- ----------------------------------------------------------------------------------------------------------- -->
