@@ -10,7 +10,7 @@ const value=useCounterStore();
   <Form :formData="formData" />
   <!-- --------------------------------------FOR PINIA------------------------------------------------------------------ -->
   <div >
-      <div class="button-container">counter:{{ value.count }}</div>
+      <div style="font-size: 24px; font-weight: bold;margin-bottom: 1px;">counter:{{ value.count }}</div>
     <button class="reset-button" @click="value.$reset()">ResetValue</button>
   </div>
 
@@ -32,7 +32,7 @@ const value=useCounterStore();
 .increment-button,
 .reset-button {
   padding: 10px 15px;
-  margin-right: 10px;
+ margin-top: 0.5%;
   font-size: 16px;
   color: #fff;
   background-color: #007bff;
